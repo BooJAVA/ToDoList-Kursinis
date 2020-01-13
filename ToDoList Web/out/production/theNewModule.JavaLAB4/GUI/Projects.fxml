@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ProjectsController">
+   <children>
+      <VBox prefHeight="545.0" prefWidth="772.0" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox prefHeight="25.0" prefWidth="507.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#getAllProjects" prefHeight="25.0" prefWidth="170.0" text="View all projects" />
+                  <Button mnemonicParsing="false" onAction="#getAllTasks" prefHeight="25.0" prefWidth="170.0" text="View all tasks" />
+                  <Button mnemonicParsing="false" onAction="#getAllSubtasks" prefHeight="25.0" prefWidth="173.0" text="View all subtasks" />
+               </children>
+            </HBox>
+            <TableView fx:id="projectsTable" prefHeight="577.0" prefWidth="492.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+      <VBox prefHeight="602.0" prefWidth="584.0">
+         <children>
+            <TabPane prefHeight="223.0" prefWidth="659.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab text="View user projects">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="14.0" prefWidth="317.0">
+                           <children>
+                              <TextField fx:id="vupUserId" layoutX="117.0" layoutY="14.0" />
+                              <Text layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter user ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="117.0" layoutY="39.0" mnemonicParsing="false" onAction="#getUserProjects" prefHeight="25.0" prefWidth="149.0" text="View" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="View project members">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="vpmProjectId" layoutX="117.0" layoutY="14.0" />
+                              <Button layoutX="117.0" layoutY="39.0" mnemonicParsing="false" onAction="#getProjectMembers" prefHeight="25.0" prefWidth="149.0" text="View" />
+                              <Text layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter project ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="View project tasks">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Text layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter project ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="117.0" layoutY="38.0" mnemonicParsing="false" onAction="#getProjectTasks" prefHeight="25.0" prefWidth="149.0" text="View" />
+                              <TextField fx:id="vptProjectId" layoutX="117.0" layoutY="14.0" />
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="View task subtasks">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="vtsTaskId" layoutX="117.0" layoutY="14.0" />
+                              <Button layoutX="117.0" layoutY="38.0" mnemonicParsing="false" onAction="#getTaskSubtasks" prefHeight="25.0" prefWidth="149.0" text="View" />
+                              <Text layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter task ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <VBox prefHeight="561.0" prefWidth="317.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Add project">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="41.0" prefWidth="317.0">
+                                 <children>
+                                    <TextField fx:id="addpProjectTitle" layoutX="133.0" layoutY="10.0" />
+                                    <Button layoutX="133.0" layoutY="35.0" mnemonicParsing="false" onAction="#addProject" prefHeight="25.0" prefWidth="149.0" text="Add" />
+                                    <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter project title">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Add member to project">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="addmUserId" layoutX="133.0" layoutY="10.0" />
+                                    <TextField fx:id="addmProjectId" layoutX="133.0" layoutY="35.0" />
+                                    <Button layoutX="133.0" layoutY="60.0" mnemonicParsing="false" onAction="#addMemberToProject" prefHeight="25.0" prefWidth="149.0" text="Add" />
+                                    <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter user ID">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter project ID">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Add task to project">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="addtProjectId" layoutX="133.0" layoutY="10.0" />
+                                    <TextField fx:id="addtTaskTitle" layoutX="133.0" layoutY="35.0" />
+                                    <Button layoutX="133.0" layoutY="60.0" mnemonicParsing="false" onAction="#addTaskToProject" prefHeight="25.0" prefWidth="149.0" text="Add" />
+                                    <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter project ID">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter task title">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Add subtask to task">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter task ID">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="addsTaskId" layoutX="133.0" layoutY="7.0" />
+                                    <TextField fx:id="addsSubtaskTitle" layoutX="133.0" layoutY="32.0" />
+                                    <Button layoutX="133.0" layoutY="57.0" mnemonicParsing="false" onAction="#addSubtaskToTask" prefHeight="25.0" prefWidth="149.0" text="Add" />
+                                    <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter subtask title">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+                  <AnchorPane prefHeight="395.0" prefWidth="317.0">
+                     <children>
+                        <Text layoutX="27.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter project ID to delete project">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Text>
+                        <TextField fx:id="dProjectId" layoutX="27.0" layoutY="23.0" prefHeight="25.0" prefWidth="127.0" />
+                        <Button layoutX="172.0" layoutY="23.0" mnemonicParsing="false" onAction="#deleteProject" prefHeight="25.0" prefWidth="127.0" text="Delete" />
+                        <Text layoutX="27.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter task ID to delete task">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="dTaskId" layoutX="27.0" layoutY="67.0" prefHeight="25.0" prefWidth="127.0" />
+                        <Button layoutX="172.0" layoutY="67.0" mnemonicParsing="false" onAction="#deleteTask" prefHeight="25.0" prefWidth="127.0" text="Delete" />
+                        <Text layoutX="27.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter subtask ID to delete subtask">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="dSubtaskId" layoutX="27.0" layoutY="111.0" prefHeight="25.0" prefWidth="127.0" />
+                        <Button layoutX="172.0" layoutY="111.0" mnemonicParsing="false" onAction="#deleteSubtask" prefHeight="25.0" prefWidth="127.0" text="Delete" />
+                        <Text layoutX="28.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter project ID and new title to edit project">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="eProjectId" layoutX="27.0" layoutY="155.0" prefHeight="25.0" prefWidth="96.0" />
+                        <TextField fx:id="eProjectTitle" layoutX="132.0" layoutY="155.0" prefHeight="25.0" prefWidth="96.0" />
+                        <Button layoutX="237.0" layoutY="155.0" mnemonicParsing="false" onAction="#editProject" prefHeight="25.0" prefWidth="74.0" text="Edit" />
+                        <Text layoutX="28.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter task ID and new title to edit task">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="eTaskId" layoutX="27.0" layoutY="199.0" prefHeight="25.0" prefWidth="96.0" />
+                        <TextField fx:id="eTaskTitle" layoutX="132.0" layoutY="199.0" prefHeight="25.0" prefWidth="96.0" />
+                        <Button layoutX="237.0" layoutY="199.0" mnemonicParsing="false" onAction="#editTask" prefHeight="25.0" prefWidth="74.0" text="Edit" />
+                        <Text layoutX="28.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter subtask ID and new title to edit subtask">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="eSubtaskId" layoutX="27.0" layoutY="243.0" prefHeight="25.0" prefWidth="96.0" />
+                        <TextField fx:id="eSubtaskTitle" layoutX="132.0" layoutY="243.0" prefHeight="25.0" prefWidth="96.0" />
+                        <Button layoutX="237.0" layoutY="243.0" mnemonicParsing="false" onAction="#editSubtask" prefHeight="25.0" prefWidth="74.0" text="Edit" />
+                        <Text layoutX="4.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter task ID to complete Enter subtask ID to complete">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="cTaskId" layoutX="4.0" layoutY="293.0" prefHeight="25.0" prefWidth="67.0" />
+                        <Button layoutX="86.0" layoutY="293.0" mnemonicParsing="false" onAction="#completeTask" prefHeight="25.0" prefWidth="74.0" text="Complete" />
+                        <TextField fx:id="cSubaskId" layoutX="173.0" layoutY="293.0" prefHeight="25.0" prefWidth="67.0" />
+                        <Button layoutX="255.0" layoutY="293.0" mnemonicParsing="false" onAction="#completeSubtask" prefHeight="25.0" prefWidth="74.0" text="Complete" />
+                     </children>
+                  </AnchorPane>
+               </children></VBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>
