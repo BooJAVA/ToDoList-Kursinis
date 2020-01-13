@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="482.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DashboardController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#register" text="Register user" />
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Manage">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openUserManager" text="Open user manager" />
+                  <MenuItem mnemonicParsing="false" onAction="#openProjectManager" text="Open project manager" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox prefHeight="60.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+         <children>
+            <PieChart fx:id="userStat" prefHeight="375.0" prefWidth="292.0" HBox.hgrow="ALWAYS" />
+            <AreaChart fx:id="projectStat" prefHeight="375.0" prefWidth="314.0" HBox.hgrow="ALWAYS">
+              <xAxis>
+                <NumberAxis label="Tasks" side="BOTTOM" tickLabelGap="1.0" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Project ID" side="LEFT" />
+              </yAxis>
+            </AreaChart>
+         </children>
+      </HBox>
+   </children>
+</VBox>

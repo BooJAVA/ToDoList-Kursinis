@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox prefHeight="487.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.UsersController">
+   <children>
+      <VBox prefHeight="456.0" prefWidth="517.0" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox prefHeight="21.0" prefWidth="558.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#getAllUsers" prefHeight="25.0" prefWidth="279.0" text="View all users" />
+                  <Button mnemonicParsing="false" onAction="#getAllActiveUsers" prefHeight="25.0" prefWidth="279.0" text="View all active users" />
+               </children></HBox>
+            <TableView fx:id="userTable" prefHeight="456.0" prefWidth="575.0" VBox.vgrow="ALWAYS" />
+         </children></VBox>
+      <VBox prefHeight="487.0" prefWidth="306.0" HBox.hgrow="ALWAYS">
+         <children>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab text="Add person">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="pLogin" layoutX="120.0" layoutY="3.0" />
+                              <TextField fx:id="pPassword" layoutX="120.0" layoutY="28.0" />
+                              <TextField fx:id="pName" layoutX="120.0" layoutY="53.0" />
+                              <TextField fx:id="pSurname" layoutX="120.0" layoutY="78.0" />
+                              <TextField fx:id="pEmail" layoutX="120.0" layoutY="103.0" />
+                              <Button layoutX="120.0" layoutY="128.0" mnemonicParsing="false" onAction="#addPerson" prefHeight="25.0" prefWidth="150.0" text="Add" />
+                              <Text layoutX="20.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="44.13671875">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="102.13671875">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="48.13671875">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname" wrappingWidth="65.13671875">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="48.13671875">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Add company">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="cLogin" layoutX="120.0" layoutY="3.0" />
+                              <TextField fx:id="cPassword" layoutX="120.0" layoutY="28.0" />
+                              <TextField fx:id="cTitle" layoutX="120.0" layoutY="53.0" />
+                              <TextField fx:id="cEmail" layoutX="120.0" layoutY="78.0" />
+                              <Button layoutX="120.0" layoutY="103.0" mnemonicParsing="false" onAction="#addCompany" prefHeight="25.0" prefWidth="150.0" text="Add" />
+                              <Text layoutX="20.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Edit person">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="pEditId" layoutX="120.0" layoutY="3.0" />
+                              <TextField fx:id="pEditName" layoutX="120.0" layoutY="53.0" />
+                              <TextField fx:id="pEditSurname" layoutX="120.0" layoutY="78.0" />
+                              <TextField fx:id="pEditEmail" layoutX="120.0" layoutY="103.0" />
+                              <Button layoutX="120.0" layoutY="127.0" mnemonicParsing="false" onAction="#editPerson" prefHeight="25.0" prefWidth="149.0" text="Edit" />
+                              <Text layoutX="20.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Person ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New surname">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New email">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="pEditPassword" layoutX="120.0" layoutY="28.0" />
+                              <Text layoutX="20.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New password">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Edit company">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="cEditId" layoutX="120.0" layoutY="3.0" />
+                              <TextField fx:id="cEditTitle" layoutX="120.0" layoutY="53.0" />
+                              <TextField fx:id="cEditEmail" layoutX="120.0" layoutY="78.0" />
+                              <Button layoutX="120.0" layoutY="101.0" mnemonicParsing="false" onAction="#editCompany" prefHeight="25.0" prefWidth="150.0" text="Edit" />
+                              <Text layoutX="20.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New title">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="20.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New email">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="cEditPassword" layoutX="120.0" layoutY="28.0" />
+                              <Text layoutX="20.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New password">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <VBox prefHeight="276.0" prefWidth="326.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#importUsers" prefHeight="25.0" prefWidth="399.0" text="Import users from users.txt" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="6.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disable user    User ID" wrappingWidth="124.37109375" />
+                        <TextField fx:id="uDisable" layoutX="131.0" layoutY="10.0" />
+                        <Button layoutX="131.0" layoutY="35.0" mnemonicParsing="false" onAction="#disableUser" prefHeight="25.0" prefWidth="149.0" text="Disable" />
+                        <Text layoutX="6.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enable user     User ID" wrappingWidth="124.37109375" />
+                        <TextField fx:id="uEnable" layoutX="131.0" layoutY="73.0" />
+                        <Button layoutX="131.0" layoutY="98.0" mnemonicParsing="false" onAction="#enableUser" prefHeight="25.0" prefWidth="149.0" text="Enable" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

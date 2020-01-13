@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="262.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginRegisterController">
+   <children>
+      <TextField fx:id="enterLogin" layoutX="180.0" layoutY="41.0" />
+      <TextField fx:id="enterPassword" layoutX="180.0" layoutY="83.0" />
+      <Text layoutX="42.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter login">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="42.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter password">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="loginButton" layoutX="180.0" layoutY="131.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="149.0" text="Login" />
+      <Text layoutX="37.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have user?">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="180.0" layoutY="171.0" mnemonicParsing="false" onAction="#register" prefHeight="25.0" prefWidth="149.0" text="Register" />
+   </children>
+</AnchorPane>
